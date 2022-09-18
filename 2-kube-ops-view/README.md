@@ -24,7 +24,7 @@ kubectl get pod,svc,sa
 
 Afterwards you can open \"kube-ops-view\" via kubectl port-forward:
 
-``` {.sourceCode .bash}
-$ kubectl port-forward service/kube-ops-view 8080:80
+```bash
+kubectl port-forward service/kube-ops-view 8080:80
 ```
 
