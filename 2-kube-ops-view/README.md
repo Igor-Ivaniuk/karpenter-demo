@@ -1,4 +1,4 @@
-Kubernetes Operational View
+# Kubernetes Operational View
 ===========================
 
 Original (repo)[https://codeberg.org/hjacobs/kube-ops-view]
@@ -17,8 +17,7 @@ kubectl get deployment metrics-server -n kube-system
 You can find example Kubernetes manifests for deployment in the `deploy`
 folder. It should be as simple as:
 
-``` {.sourceCode .bash}
-
+```bash
 kubectl apply -k deploy 
 kubectl get pod,svc,sa
 ```
