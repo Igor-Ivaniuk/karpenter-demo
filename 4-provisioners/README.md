@@ -91,7 +91,7 @@ spec:
       values: ["spot"]
   limits:
     resources:
-      cpu: 1000
+      cpu: 10000
   kubeletConfiguration:
     containerRuntime: containerd
     systemReserved:
@@ -122,7 +122,7 @@ spec:
       values: ["spot"]
   limits:
     resources:
-      cpu: 5000
+      cpu: 1000
   kubeletConfiguration:
     maxPods: 200
   provider:

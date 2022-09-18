@@ -16,8 +16,21 @@ Environment setup and test scenarios for scaling the EKS cluster with Karpenter
 
 ## Testing
 
+### Random workloads
 Generate random workloads - 2000 pods in total, batches of 500 pods, into namespace **"load"**:
 ```bash
-./generate-random-load/create-workload.sh 2000 500 load
+cd generate-random-load
+kubectl create namespace load
+./create-workload.sh 2000 500 load
 ```
 
+Delete random workloads:
+```
+cd generate-random-load
+./delete-workload.sh load
+```
+
+### Consolidation testing
+```bash
+./create-workload.sh 999 333 load
+```
