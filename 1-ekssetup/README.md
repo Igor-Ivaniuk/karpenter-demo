@@ -2,14 +2,8 @@
 
 ## 1. Define environment variables
 ```
-export KARPENTER_VERSION=v0.16.0
-
 export CLUSTER_NAME="eks-karpenter-demo"
-export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
-export AWS_ACCOUNT_ID="$(aws sts get-caller-identity --query Account --output text)"
-
-# check that we correctly configure our vars
-echo $KARPENTER_VERSION $CLUSTER_NAME $AWS_REGION $AWS_ACCOUNT_ID
+echo "export CLUSTER_NAME=${CLUSTER_NAME}" | tee -a ~/.bash_profile
 ```
 
 ## 2. Launch EKS cluster
@@ -109,14 +103,4 @@ View the mappings in the ConfigMap again
 eksctl get iamidentitymapping --cluster ${CLUSTER_NAME} --region=${AWS_REGION}
 ```
 
-## 4. Install Kube-Ops-View
-Install Helm if not yet installed
-```
-curl -sSL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
-helm repo add stable https://charts.helm.sh/stable
-helm completion bash >> ~/.bash_completion
-. /etc/profile.d/bash_completion.sh
-. ~/.bash_completion
-source <(helm completion bash)
-```
-Deploy ```kube-ops-view``` as described in [2-kube-ops-view/README.md](../2-kube-ops-view/README.md)
+Continue - deploy ```kube-ops-view``` as described in [2-kube-ops-view/README.md](../2-kube-ops-view/README.md)

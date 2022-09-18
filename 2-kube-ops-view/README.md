@@ -28,3 +28,5 @@ Afterwards you can open \"kube-ops-view\" via kubectl port-forward:
 kubectl port-forward service/kube-ops-view 8080:80
 ```
 
+Continue - install Karpenter: [2-kube-ops-view/README.md](../2-kube-ops-view/README.md)
+
