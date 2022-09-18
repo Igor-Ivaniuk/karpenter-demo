@@ -40,8 +40,8 @@ echo "export CLUSTER_ENDPOINT=${CLUSTER_ENDPOINT}" | tee -a ~/.bash_profile
 ```
 
 ## 3. (Optional) Add your IAM user to the Kubernetes configmap
-If no resources are visible in the EKS console, and 
-This guide assumes that you have an IAM user or role that has access to EKS cluster. The following example policy includes the necessary permissions for a user or role to view Kubernetes resources for all clusters in your account. Replace 111122223333 with your account ID.
+If no cluster resources are visible in your EKS cluster in the AWS console, you may want to allow your current IAM user or console role to be authorized in EKS, to display cluster details. 
+This guide assumes that you already have an IAM user or role that has access to EKS cluster. The following example policy includes the necessary permissions for a user or role to view Kubernetes resources for all clusters in your account. Replace 111122223333 with your account ID.
 ```json
 {
     "Version": "2012-10-17",
@@ -71,6 +71,8 @@ This guide assumes that you have an IAM user or role that has access to EKS clus
     ]
 }  
 ```
+
+Now we will add the identity mapping into the EKS cluster. We will use a separate user group in the Kubernetes RBAC.
 
 Create a Kubernetes group to view resources in all namespaces. The group name in the file is ```eks-console-dashboard-full-access-group```. Apply the manifest to your cluster with the following command:
 ```
