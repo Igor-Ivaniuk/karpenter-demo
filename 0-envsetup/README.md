@@ -143,4 +143,4 @@ You can test access to your cluster by running the following command. The output
 ```
 kubectl get nodes
 ```
-If no cluster is running, please create it as described [here](../1-ekssetup/README.md)
+If no cluster is running, please create it according to [1-ekssetup/README.md](../1-ekssetup/README.md)
