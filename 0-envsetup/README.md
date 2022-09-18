@@ -1,5 +1,5 @@
 # Prepare environment
-===========================
+
 ## 1. Set up Cloud9 Environment
 
 **A. Disable Cloud9 AWS temporary credentials**

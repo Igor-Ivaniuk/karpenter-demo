@@ -1,5 +1,5 @@
 # Create EKS cluster with Karpenter
-===========================
+
 ## 1. Define environment variables
 ```
 export KARPENTER_VERSION=v0.16.0
