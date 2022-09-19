@@ -1,7 +1,7 @@
 # Provisioners
 Here you an find different examples of provisioners (with the commands to deploy them)
 
-Default with spot instances
+### Default with spot instances
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: karpenter.sh/v1alpha5
@@ -21,11 +21,11 @@ spec:
       karpenter.sh/discovery: ${CLUSTER_NAME}
     securityGroupSelector:
       karpenter.sh/discovery: ${CLUSTER_NAME}
-  ttlSecondsAfterEmpty: 30
+  ttlSecondsAfterEmpty: 15
 EOF
 ```
 
-With consolidation
+### With consolidation
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: karpenter.sh/v1alpha5
@@ -50,7 +50,7 @@ spec:
 EOF
 ```
 
-Restrict number of pods per node
+### Restrict number of pods per node
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: karpenter.sh/v1alpha5
@@ -73,11 +73,11 @@ spec:
       karpenter.sh/discovery: ${CLUSTER_NAME}
     securityGroupSelector:
       karpenter.sh/discovery: ${CLUSTER_NAME}
-  ttlSecondsAfterEmpty: 30
+  ttlSecondsAfterEmpty: 15
 EOF
 ```
 
-Restriction with daemonset configuration (reserved capacity for daemonsets)
+### Restriction with daemonset configuration (reserved capacity for daemonsets)
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: karpenter.sh/v1alpha5
@@ -104,11 +104,11 @@ spec:
       karpenter.sh/discovery: ${CLUSTER_NAME}
     securityGroupSelector:
       karpenter.sh/discovery: ${CLUSTER_NAME}
-  ttlSecondsAfterEmpty: 30
+  ttlSecondsAfterEmpty: 15
 EOF
 ```
 
-For random load test - not more than 200 pods per node
+### For random load test - not more than 200 pods per node
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: karpenter.sh/v1alpha5
@@ -130,6 +130,6 @@ spec:
       karpenter.sh/discovery: ${CLUSTER_NAME}
     securityGroupSelector:
       karpenter.sh/discovery: ${CLUSTER_NAME}
-  ttlSecondsAfterEmpty: 30
+  ttlSecondsAfterEmpty: 15
 EOF
 ```
