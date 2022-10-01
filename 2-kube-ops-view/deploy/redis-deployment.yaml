@@ -28,11 +28,11 @@ spec:
             port: 6379
         resources:
           limits:
-            cpu: 500m
-            memory: 500Mi
+            cpu: 1
+            memory: 1Gi
           requests:
-            cpu: 500m
-            memory: 500Mi
+            cpu: 1
+            memory: 1Gi
         securityContext:
           readOnlyRootFilesystem: true
           runAsNonRoot: true
