@@ -52,7 +52,7 @@ First install the [Provisioner with enabled Consolidation](4-provisioners/README
 
 ### Test pods spread
 With the [Default provisioner](4-provisioners/README.md#default-with-spot-instances) do:
-[dd](test-test-workloads/kr-spread-400pods-100cpu.yaml)
+
 ```
 kubectl apply -f test-test-workloads/kr-spread-400pods-100cpu.yaml
 
