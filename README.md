@@ -16,6 +16,16 @@ Environment setup and test scenarios for scaling the EKS cluster with Karpenter
 
 ## Testing
 
+### 10 vCPU workloads
+
+```
+kubectl apply -f test-workloads/kr-10pods-100cpu.yaml
+
+kubectl scale --replicas=5 deployment/inflate 
+
+kubectl delete deployment inflate
+```
+
 ### Random workloads
 Generate random workloads - 2000 pods in total, batches of 500 pods, into namespace **"load"**:
 ```bash
